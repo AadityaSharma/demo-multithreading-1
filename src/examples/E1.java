@@ -6,9 +6,13 @@ public class E1 {
             @Override
             public void run() {
                 // code that will run in a new thread
-                System.out.println("We are not in thread " + Thread.currentThread().getName());
+                System.out.println("We are now in thread " + Thread.currentThread().getName());
+                System.out.println("Current thread priority is: " + Thread.currentThread().getPriority());
             }
         });
+
+        thread.setName("New worker thread");
+        thread.setPriority(Thread.MAX_PRIORITY);
 
         System.out.println("We are in thread: "
                 + Thread.currentThread().getName()
